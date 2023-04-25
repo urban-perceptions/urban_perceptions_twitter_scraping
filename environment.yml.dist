@@ -1,0 +1,11 @@
+name: twitter
+dependencies:
+  - numpy
+  - pandas
+  - requests
+  - openpyxl
+  - pip
+  - pip:
+      - searchtweets-v2
+variables:
+  TWITTER_BEARER_CREDENTIALS: # copy this file and rename it environment.yml, add twitter bearer credential here
