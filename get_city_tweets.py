@@ -44,7 +44,7 @@ def call_search_command(args : Dict[str, str]) -> None:
     search_tweets.py \
         --max-tweets  {num_results} \
         --results-per-call {num_results} \
-        --query '#{search_term} -"just posted a" {neg}point_radius:[{lon} {lat} 25mi] has:geo -is:reply -is:retweet lang:en' \
+        --query '#{search_term} {neg}point_radius:[{lon} {lat} 25mi] has:geo -is:reply -is:retweet lang:en' \
         --end-time {random_date_time} \
         --tweet-fields author_id,conversation_id,created_at \
         --expansions in_reply_to_user_id,referenced_tweets.id,referenced_tweets.id.author_id,geo.place_id \
@@ -69,10 +69,10 @@ if __name__ == "__main__":
 
     total_queries : int = tweets_per_city // tweets_per_query
 
-    start : datetime = datetime(2021, 1, 1, 0, 0, 0)
+    start : datetime = datetime(2020, 1, 1, 0, 0, 0)
     end : datetime = datetime(2021, 12, 31, 23, 59, 59)
-    total_seconds : int = 365 * 24 * 60 * 60
-    random.seed(1234567)
+    total_seconds : int = 365 * 24 * 60 * 60 * 2
+    random.seed(7071990)
 
 
 
